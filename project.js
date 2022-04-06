@@ -1,6 +1,6 @@
 const cardsOptions = ["A","B","C","D","E","F","G","H","I","J"];
 let numberOfcard = Number(prompt("how many diffrent cards types?\n*btween 2 to 10"));
-let cards = []
+let cards = cardsOptions
 numberOfcards()
 
 shufel(cards);
@@ -9,6 +9,8 @@ for(i in cards){
     const element = createCard(i)
     board.appendChild(element);
 }
+
+
 function numberOfcards() {
     while(isNaN(numberOfcard) || numberOfcard <2 || numberOfcard >10){
         numberOfcard = Number(prompt("enter valid number"))
