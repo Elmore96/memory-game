@@ -1,0 +1,29 @@
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+#board{
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 4rem);
+    grid-template-rows: 7rem 7rem 7rem 7rem 7rem ;
+    gap: 3rem;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.card{
+    height: 110;
+    width: 125%;
+    border:2px solid black;
+    border-radius: 5px;
+    /* background-image: url(https://i.pinimg.com/originals/72/13/e1/7213e1a55a3c0c73d5864e14ba1aa7dc.jpg);
+    background-size: contain; */
+    text-align: center;
+}
+
+
+    /* background-image: url(https://i.pinimg.com/originals/72/13/e1/7213e1a55a3c0c73d5864e14ba1aa7dc.jpg);} */
+/* #board{border: 2px solid black; border-radius: 5px;
+    display: grid;
+} */
