@@ -2,23 +2,40 @@
     box-sizing: border-box;
 }
 
+h1{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    text-align: center;
+    font-size: 60px;
+    font-family: Georgia;
+    font-style: italic;
+    color: rgb(180, 43, 43);
+    text-shadow: 0 8px 15px #adadad;
+}
+body{
+    height: 100vh;
+    background: #8acfe7b3;
+}
+
 #board{
-    position: absolute;
-    margin: 0;
+    position: relative;
+    margin: auto;
     display: grid;
+    top: 20px;
     grid-template-columns: repeat(5, 4rem);
     grid-template-rows: repeat(4, 7rem) ;
     gap: 3rem;
     justify-content: center;
     padding-top: 1rem;
-    left: 25%;
-    top: 20%;
-    height: 620px;
+    height: 640px;
     width: 600px;
-    background: #53dd5a;
+    background-image: url(https://thumbs.dreamstime.com/b/green-felt-fabric-texture-background-snooker-poker-billiards-table-131133322.jpg);
+    border: 9px solid rgb(65, 31, 31);
+    border-collapse: collapse;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 0 20px 8px #d0d0d0;
+    box-shadow: 0 0 20px 8px #626161;
 }
 
 .card{
@@ -30,6 +47,8 @@
     background-size: contain;
     text-align: center;
     cursor: pointer;
+    transform: scale(1);
+    user-select: none;
 }
 .card:hover{
     height: 110;
@@ -41,4 +60,21 @@
     box-shadow: 0 0 20px 8px #958f8f;
     text-align: center;
     cursor: pointer;
+}
+.card:active{
+    transform: scale(.95);
+    transition: 0.5s;
+}
+
+#A{
+    height: 110;
+    width: 125%;
+    border:2px solid black;
+    border-radius: 5px;
+    background-image: image("/cards/azumag-kougzx.png");
+    background-size: contain;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(1);
+    user-select: none; 
 }
