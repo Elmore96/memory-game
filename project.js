@@ -31,6 +31,6 @@ function createCard(idx){
     const cardEL = document.createElement("div");
     cardEL.innerHTML = cards[idx];
     cardEL.id = idx
-    cardEL.className = "card"
+    cardEL.className = "card" + " " + cardEL.innerHTML
     return cardEL
 }

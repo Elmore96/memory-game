@@ -66,15 +66,59 @@ body{
     transition: 0.5s;
 }
 
-#A{
+.A{
     height: 110;
     width: 125%;
     border:2px solid black;
     border-radius: 5px;
-    background-image: image("/cards/azumag-kougzx.png");
-    background-size: contain;
+    background-image: url("cards/azumag-kougzx.png");
+    background-color: rgb(253, 46, 191);
+    background-size: 76px 109px;
     text-align: center;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
+    color: transparent;
+}
+.B{
+    height: 110;
+    width: 125%;
+    border:2px solid black;
+    border-radius: 5px;
+    background-image: url("cards/black-cat.png");
+    background-color: red;
+    background-size: 100% 108PX;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(1);
+    user-select: none;
+    color: transparent;
+}
+.C{
+    height: 110;
+    width: 125%;
+    border:2px solid black;
+    border-radius: 5px;
+    background-image: url("cards/cat-listening-to-music.png");
+    background-color: rgb(28, 187, 255);
+    background-size: 108px;
+    text-align: center;
+    cursor: pointer;
+    transform: scale(1);
+    user-select: none; 
+    color: transparent;
+}
+.D{
+    height: 110;
+    width: 125%;
+    border:2px solid black;
+    border-radius: 5px;
+    background-image: url("cards/cat-with-big-smile.png");
+    background-size: 86px 111px;
+    background-color: rgb(220, 214, 214);
+    text-align: center;
+    cursor: pointer;
+    transform: scale(1);
+    user-select: none; 
+    color: transparent;
 }
