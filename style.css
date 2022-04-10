@@ -7,7 +7,7 @@ h1{
     margin: auto;
     justify-content: center;
     text-align: center;
-    font-size: 60px;
+    font-size: 10vh;
     font-family: Georgia;
     font-style: italic;
     color: rgb(180, 43, 43);
@@ -19,20 +19,17 @@ body{
 }
 
 #board{
-    position: relative;
-    margin: auto;
-    display: grid;
+    display: flex;
     flex-wrap: wrap;
-    top: 20px;
-    grid-template-columns: repeat(5, 4rem);
-    grid-template-rows: repeat(4, 7rem) ;
+    -ms-flex-align: center;
+    margin-top: 2rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
     gap: 3rem;
     justify-content: center;
-    padding-top: 1rem;
-    height: 640px;
-    width: 600px;
+    padding: 1rem;
     background-image: url("cards/table.jpg");
-    border: 9px solid rgb(65, 31, 31);
+    border: 2vh solid rgb(65, 31, 31);
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 20px;
@@ -40,26 +37,26 @@ body{
 }
 
 .card:hover{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     border:2px solid black;
     border-radius: 5px;
-    background-image: url(https://i.pinimg.com/originals/72/13/e1/7213e1a55a3c0c73d5864e14ba1aa7dc.jpg);
+    background-image: url("cards/back.jpg");
     background-size: contain;
     box-shadow: 0 0 20px 8px #958f8f;
     text-align: center;
     cursor: pointer;
 }
 .card:active{
-    transform: scale(.95);
+    transform: scale(.85);
     transition: 0.5s;
 }
 .card{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     border:2px solid black;
     border-radius: 5px;
-    background-image: url(https://i.pinimg.com/originals/72/13/e1/7213e1a55a3c0c73d5864e14ba1aa7dc.jpg);
+    background-image: url("cards/back.jpg");
     background-size: contain;
     text-align: center;
     cursor: pointer;
@@ -68,43 +65,49 @@ body{
 }
 
 .A{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/azumag-kougzx.png");
-    background-color: rgb(253, 46, 191);
-    background-size: 76px 109px;
+    background-color: rgb(113, 77, 11);
+    background-size: 18vmin 29vmin;
+    background-position: center;
+    background-repeat: repeat-y;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .B{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/black-cat.png");
     background-color: red;
-    background-size: 100% 108PX;
+    background-size: 20vmin 28vmin;
+    background-position: left;
+    background-repeat: repeat-x;
     cursor: pointer;
     transform: scale(1);
     user-select: none;
     color: transparent;
 }
 .C{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/cat-listening-to-music.png");
-    background-color: rgb(28, 187, 255);
-    background-size: 108px;
+    background-color: rgb(103, 204, 248);
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat-x;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .D{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/cat-with-big-smile.png");
-    background-size: 86px 111px;
+    background-size: 21vmin 28vmin;
     background-color: rgb(87, 54, 85);
     cursor: pointer;
     transform: scale(1);
@@ -112,21 +115,22 @@ body{
     color: transparent;
 }
 .E{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/60-605442_evil-cat-png-clip-art-free-halloween-silhouette.png");
-    background-size: 86px 111px;
+    background-size: 20vmin 28vmin;
     background-color: rgb(73, 73, 73);
+    background-repeat: repeat-y;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .F{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/christmas_cat_and_costume_1399.png");
-    background-size: 86px 111px;
+    background-size: 20vmin 28vmin;
     background-color: rgb(220, 214, 214);
     cursor: pointer;
     transform: scale(1);
@@ -134,44 +138,48 @@ body{
     color: transparent;
 }
 .G{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/body-cat.webp");
-    background-size: 86px 111px;
-    background-color: rgb(220, 214, 214);
+    background-size: 20vmin 28vmin;
+    background-color: rgb(255, 186, 25);
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .H{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/fussy.png");
-    background-size: 86px 111px;
-    background-color: rgb(220, 214, 214);
+    background-size: 20vmin 26vmin;
+    background-color: rgb(24, 61, 248);
+    background-position: center;
+    background-repeat: repeat-x;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .I{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/unicat.png");
-    background-size: 86px 111px;
-    background-color: rgb(220, 214, 214);
+    background-size: 20vmin 29vmin;
+    background-color: rgb(255, 114, 199);
+    background-position: center;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
     color: transparent;
 }
 .J{
-    height: 110;
-    width: 125%;
+    height: 29vmin;
+    width: 21vmin;
     background-image: url("cards/super-hero.png");
-    background-size: 86px 111px;
+    background-size: 20vmin 28vmin;
     background-color: rgb(220, 214, 214);
+    background-position: bottom;
     cursor: pointer;
     transform: scale(1);
     user-select: none; 
