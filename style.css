@@ -16,6 +16,7 @@ h1{
 body{
     height: 100vh;
     background: #8acfe7b3;
+    perspective: 100vh;
 }
 
 #board{
@@ -25,163 +26,130 @@ body{
     margin-top: 2rem;
     margin-left: 10rem;
     margin-right: 10rem;
-    gap: 3rem;
+    gap: 5rem;
     justify-content: center;
     padding: 1rem;
     background-image: url("cards/table.jpg");
+    background-size: contain;
     border: 2vh solid rgb(65, 31, 31);
     border-collapse: collapse;
     overflow: hidden;
     border-radius: 20px;
-    box-shadow: 0 0 20px 8px #626161;
-}
-
-.card:hover{
-    height: 29vmin;
-    width: 21vmin;
-    border:2px solid black;
-    border-radius: 5px;
-    background-image: url("cards/back.jpg");
-    background-size: contain;
-    box-shadow: 0 0 20px 8px #958f8f;
-    text-align: center;
-    cursor: pointer;
+    box-shadow: -2vw 2vw 5rem 1rem #626161;
 }
 .card:active{
-    transform: scale(.85);
-    transition: 0.5s;
-}
+        transform: scale(.97);
+        transition: .2s;
+    }
+    
+.card:hover{
+        box-shadow: 0 0 5rem 2rem #958f8f;
+        cursor: pointer;
+    }
 .card{
-    height: 29vmin;
-    width: 21vmin;
-    border:2px solid black;
-    border-radius: 5px;
-    background-image: url("cards/back.jpg");
-    background-size: contain;
-    text-align: center;
+        height: 29vmin;
+        width: 21vmin;
+        border:2px solid black;
+        border-radius: 0.5rem;
+        color: transparent;
     cursor: pointer;
     transform: scale(1);
     user-select: none;
-}
+    box-shadow: -1vw -1vw 3rem 0rem #0000008d;
+    backface-visibility: hidden;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    }
+.card.flip{
+        transform: rotateY(180deg);
+    }
+
 
 .A{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/azumag-kougzx.png");
     background-color: rgb(113, 77, 11);
     background-size: 18vmin 29vmin;
     background-position: center;
     background-repeat: repeat-y;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .B{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/black-cat.png");
     background-color: red;
     background-size: 20vmin 28vmin;
     background-position: left;
     background-repeat: repeat-x;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none;
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .C{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/cat-listening-to-music.png");
     background-color: rgb(103, 204, 248);
     background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .D{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/cat-with-big-smile.png");
     background-size: 21vmin 28vmin;
     background-color: rgb(87, 54, 85);
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .E{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/60-605442_evil-cat-png-clip-art-free-halloween-silhouette.png");
     background-size: 20vmin 28vmin;
     background-color: rgb(73, 73, 73);
     background-repeat: repeat-y;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .F{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/christmas_cat_and_costume_1399.png");
     background-size: 20vmin 28vmin;
     background-color: rgb(220, 214, 214);
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .G{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/body-cat.webp");
     background-size: 20vmin 28vmin;
     background-color: rgb(255, 186, 25);
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .H{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/fussy.png");
     background-size: 20vmin 26vmin;
     background-color: rgb(24, 61, 248);
     background-position: center;
     background-repeat: repeat-x;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .I{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/unicat.png");
     background-size: 20vmin 29vmin;
     background-color: rgb(255, 114, 199);
     background-position: center;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
 }
 .J{
-    height: 29vmin;
-    width: 21vmin;
     background-image: url("cards/super-hero.png");
     background-size: 20vmin 28vmin;
     background-color: rgb(220, 214, 214);
     background-position: bottom;
-    cursor: pointer;
-    transform: scale(1);
-    user-select: none; 
-    color: transparent;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.back{
+    background-image: url("cards/back.jpg");
+    background-size: 22vmin 30vmin;
+    background-position-x: -0.5rem;
+    background-position-y: -0.4rem;
 }
