@@ -1,9 +1,16 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
-
-h1{
+#top{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4vh;
+}
+h1{
+    box-sizing: border-box;
+    height: 10vh;
+    width: 79vh;
     margin: auto;
     justify-content: center;
     text-align: center;
@@ -18,7 +25,34 @@ body{
     background: #8acfe7b3;
     perspective: 100vh;
 }
-
+#reset {
+    background-color: #ab2424;
+    border: 0.2rem solid rgb(85, 55, 55);
+    border-radius: 1rem;
+    box-shadow: -.4vw -.2vw 1.5rem 0.3rem #838383;
+    margin-top: 3rem;
+    margin-left: -30rem;
+    color: rgb(253, 253, 253);
+    padding: .5rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    font-size: 4vh;
+    transform: scale(1);
+    cursor: pointer;
+  }
+#reset:active{
+    transform: scale(.97);
+    transition: .2s;
+}
+#players{
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5vh;
+    gap: 4vh;
+    font-size: 3vh;
+    color: rgb(220, 60, 153);
+}
 #board{
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +60,7 @@ body{
     margin-top: 2rem;
     margin-left: 10rem;
     margin-right: 10rem;
-    gap: 5rem;
+    gap: 4rem;
     justify-content: center;
     padding: 1rem;
     background-image: url("cards/table.jpg");
@@ -47,8 +81,8 @@ body{
         cursor: pointer;
     }
 .card{
-        height: 29vmin;
-        width: 21vmin;
+        height: 19vmin;
+        width: 13vmin;
         border:2px solid black;
         border-radius: 0.5rem;
         color: transparent;
@@ -69,7 +103,7 @@ body{
 .A{
     background-image: url("cards/azumag-kougzx.png");
     background-color: rgb(113, 77, 11);
-    background-size: 18vmin 29vmin;
+    background-size: 100% 100%;
     background-position: center;
     background-repeat: repeat-y;
     backface-visibility: visible;
@@ -78,7 +112,7 @@ body{
 .B{
     background-image: url("cards/black-cat.png");
     background-color: red;
-    background-size: 20vmin 28vmin;
+    background-size: 100% 100%;
     background-position: left;
     background-repeat: repeat-x;
     backface-visibility: visible;
@@ -95,14 +129,14 @@ body{
 }
 .D{
     background-image: url("cards/cat-with-big-smile.png");
-    background-size: 21vmin 28vmin;
+    background-size: 100% 100%;
     background-color: rgb(87, 54, 85);
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
 .E{
     background-image: url("cards/60-605442_evil-cat-png-clip-art-free-halloween-silhouette.png");
-    background-size: 20vmin 28vmin;
+    background-size: 100% 100%;
     background-color: rgb(73, 73, 73);
     background-repeat: repeat-y;
     backface-visibility: visible;
@@ -110,21 +144,21 @@ body{
 }
 .F{
     background-image: url("cards/christmas_cat_and_costume_1399.png");
-    background-size: 20vmin 28vmin;
+    background-size: 100% 100%;
     background-color: rgb(220, 214, 214);
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
 .G{
     background-image: url("cards/body-cat.webp");
-    background-size: 20vmin 28vmin;
+    background-size: 100% 100%;
     background-color: rgb(255, 186, 25);
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
 .H{
     background-image: url("cards/fussy.png");
-    background-size: 20vmin 26vmin;
+    background-size: 100% 100%;
     background-color: rgb(24, 61, 248);
     background-position: center;
     background-repeat: repeat-x;
@@ -133,7 +167,7 @@ body{
 }
 .I{
     background-image: url("cards/unicat.png");
-    background-size: 20vmin 29vmin;
+    background-size: 100% 100%;
     background-color: rgb(255, 114, 199);
     background-position: center;
     backface-visibility: visible;
@@ -141,7 +175,7 @@ body{
 }
 .J{
     background-image: url("cards/super-hero.png");
-    background-size: 20vmin 28vmin;
+    background-size: 100% 100%;
     background-color: rgb(220, 214, 214);
     background-position: bottom;
     backface-visibility: visible;
@@ -149,7 +183,7 @@ body{
 }
 .back{
     background-image: url("cards/back.jpg");
-    background-size: 22vmin 30vmin;
+    background-size: 110% 105%;
     background-position-x: -0.5rem;
     background-position-y: -0.4rem;
 }
