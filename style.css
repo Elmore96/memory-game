@@ -30,8 +30,8 @@ body{
     border: 0.2rem solid rgb(85, 55, 55);
     border-radius: 1rem;
     box-shadow: -.4vw -.2vw 1.5rem 0.3rem #838383;
-    margin-top: 3rem;
-    margin-left: -30rem;
+    margin-top: 1.5rem;
+    margin-left: -10rem;
     color: rgb(253, 253, 253);
     padding: .5rem 1rem;
     text-align: center;
@@ -58,9 +58,9 @@ body{
     flex-wrap: wrap;
     -ms-flex-align: center;
     margin-top: 2rem;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    gap: 4rem;
+    margin-left: 7rem;
+    margin-right: 7rem;
+    gap: 2rem;
     justify-content: center;
     padding: 1rem;
     background-image: url("cards/table.jpg");
@@ -81,8 +81,8 @@ body{
         cursor: pointer;
     }
 .card{
-        height: 19vmin;
-        width: 13vmin;
+        height: 22vmin;
+        width: 16vmin;
         border:2px solid black;
         border-radius: 0.5rem;
         color: transparent;
@@ -93,10 +93,10 @@ body{
     backface-visibility: hidden;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .5s;
+    transition: transform .8s;
     }
 .card.flip{
-        transform: rotateY(180deg);
+        transform: rotateY(360deg);
     }
 
 
@@ -113,14 +113,14 @@ body{
     background-image: url("cards/black-cat.png");
     background-color: red;
     background-size: 100% 100%;
-    background-position: left;
+    background-position: center;
     background-repeat: repeat-x;
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
 .C{
     background-image: url("cards/cat-listening-to-music.png");
-    background-color: rgb(103, 204, 248);
+    background-color: rgb(65, 180, 118);
     background-size: contain;
     background-position: center;
     background-repeat: repeat-x;
@@ -152,7 +152,7 @@ body{
 .G{
     background-image: url("cards/body-cat.webp");
     background-size: 100% 100%;
-    background-color: rgb(255, 186, 25);
+    background-color: rgb(255, 145, 0);
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
@@ -168,7 +168,7 @@ body{
 .I{
     background-image: url("cards/unicat.png");
     background-size: 100% 100%;
-    background-color: rgb(255, 114, 199);
+    background-color: rgb(255, 157, 199);
     background-position: center;
     backface-visibility: visible;
     transform: rotateY(180deg);
@@ -176,14 +176,88 @@ body{
 .J{
     background-image: url("cards/super-hero.png");
     background-size: 100% 100%;
-    background-color: rgb(220, 214, 214);
+    background-color: rgb(56, 255, 232);
     background-position: bottom;
     backface-visibility: visible;
     transform: rotateY(180deg);
 }
+.K{
+    background-image: url("cards/cute-gray-cat.png");
+    background-size: 100% 100%;
+    background-color: rgb(255, 229, 61);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.L{
+    background-image: url("cards/black-and-white.png");
+    background-size: 130% 100%;
+    background-color: rgb(248, 74, 74);
+    background-position-x: -1rem;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.M{
+    background-image: url("cards/grampy-cat.png");
+    background-size: 100% 100%;
+    background-color: rgb(11, 11, 37);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.N{
+    background-image: url("cards/sphynx.png");
+    background-size: 135% 110%;
+    background-color: rgb(217, 255, 0);
+    background-position-x: -1.1rem;
+    background-position-y: -.5rem;
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.O{
+    background-image: url("cards/cat-and-bone.png");
+    background-size: 100% 100%;
+    background-color: rgb(154, 20, 20);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.P{
+    background-image: url("cards/dizzy-cat.png");
+    background-size: 100% 95%;
+    background-color: rgb(125, 26, 58);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.Q{
+    background-image: url("cards/pirate.png");
+    background-size: 100% 100%;
+    background-color: rgb(83, 149, 214);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.R{
+    background-image: url("cards/takocat.png");
+    background-size: 100% 95%;
+    background-color: rgb(233, 83, 178);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.S{
+    background-image: url("cards/basket.png");
+    background-size: 100% 100%;
+    background-color: rgb(185, 0, 142);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
+.V{
+    background-image: url("cards/soldiar.png");
+    background-size: 100% 100%;
+    background-color: rgb(35, 12, 12);
+    backface-visibility: visible;
+    transform: rotateY(180deg);
+}
 .back{
-    background-image: url("cards/back.jpg");
-    background-size: 110% 105%;
-    background-position-x: -0.5rem;
-    background-position-y: -0.4rem;
+    background-image: url("cards/back.png");
+    justify-content: center;
+    background-position: center;
+    background-size: 139% 104%;
+    background-color: black;
 }

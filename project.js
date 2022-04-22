@@ -9,7 +9,7 @@ let numberOfplayer;
     pl2 = "player 2";
     pl3 = "player 3";
     pl4 = "player 4";
-const cardsOptions = ["A","B","C","D","E","F","G","H","I","J"];
+const cardsOptions = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","V"];
 const playerOpstions = [
     {player: pl1,score: 0},
     {player: pl2,score: 0},
@@ -46,14 +46,14 @@ playingP = 0
 playerRotetion(players);
 }
 function numberOfcards() {
-    while(isNaN(numberOfcard) || numberOfcard <2 || numberOfcard >10){
+    while(isNaN(numberOfcard) || numberOfcard <2 || numberOfcard > 20){
         numberOfcard = Number(prompt("enter valid number"))
     }
     let temp = cardsOptions.slice(0,(numberOfcard))
     return cards = temp.concat(temp)
 }
 function numberOfplayers(){
-    while(isNaN(numberOfplayer) || numberOfplayer <0 || numberOfplayer >4){
+    while(isNaN(numberOfplayer) || numberOfplayer < 1 || numberOfplayer >4){
         numberOfplayer = Number(prompt("enter valid number"))
     }
     let temp = playerOpstions.slice(0,(numberOfplayer))
