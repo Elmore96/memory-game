@@ -1,42 +1,32 @@
 const board = document.getElementById("board");
 const playing = document.getElementById("players");
+const cardsOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "V"];
 let numberOfcard;
 let numberOfplayer;
 openCards = [];
-sameCards = 0;
 cards = [];
-players = []
-playingP = 0;
-pl1 = "player 1";
-pl2 = "player 2";
-pl3 = "player 3";
-pl4 = "player 4";
-const cardsOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "V"];
-menu()
+players = [];
+sameCards = 0;
+let playingP = 0;
+names = [];
+let winner = {player: 'tie', score: 0};
+menu();
 //////////////////////////////////////////////////
 // functions
 function gameStart() {
-    const playerOpstions = [{
-            player: pl1,
-            score: 0
-        },
-        {
-            player: pl2,
-            score: 0
-        },
-        {
-            player: pl3,
-            score: 0
-        },
-        {
-            player: pl4,
-            score: 0
-        },
-    ];
+    sameCards = 0;
     playingP = 0;
-    players = [];
-    numberOfcards()
-    numberOfplayers(playerOpstions)
+    openCards = [];
+    players = []
+    for (i = 0; i < names.length; i++) {
+        let object = {
+            player: names[i],
+            score: 0
+        }
+        players.push(object)
+    }
+    let temp = cardsOptions.slice(0, (numberOfcard))
+    cards = temp.concat(temp)
     shufel(cards);
     clean()
     for (i in cards) {
@@ -48,16 +38,6 @@ function gameStart() {
         playing.appendChild(element)
     }
     playingP = 0
-}
-
-function numberOfcards() {
-    let temp = cardsOptions.slice(0, (numberOfcard))
-    return cards = temp.concat(temp)
-}
-
-function numberOfplayers(arr) {
-    let temp = arr.slice(0, (numberOfplayer))
-    return players = temp
 }
 
 function shufel(arr) {
@@ -106,6 +86,13 @@ function logo() {
     return logo
 }
 
+function playerSetup(i) {
+    let p = document.createElement('div')
+    p.innerHTML = `<label>Player ${i}</label>
+<input type='text' name='player${i}' class='block' id='palyer${i}' value='Player ${i}'>`
+    return p
+}
+
 function menu() {
     clean()
     let main = document.createElement('span');
@@ -113,6 +100,7 @@ function menu() {
     main.innerHTML = '<u>main menu</u>'
     let cardsA = document.createElement('div');
     cardsA.id = 'cardsTypes'
+    cardsA.className = "menuText"
     cardsAT = document.createElement('label')
     cardsAT.innerHTML = "Cards Tyeps: "
     cardsA.appendChild(cardsAT)
@@ -128,6 +116,7 @@ function menu() {
     cardsA.appendChild(cardsAL)
     let playersA = document.createElement('div');
     playersA.id = 'playersRang'
+    playersA.className = "menuText"
     playersAT = document.createElement('label')
     playersAT.innerHTML = "Players Amount: "
     playersA.appendChild(playersAT)
@@ -144,30 +133,21 @@ function menu() {
     let playersN = document.createElement('div');
     playersN.id = 'playersNames'
     playersN.innerHTML = "Players Names:"
-    playersN.id = "playersNames"
-    let playerTemp = document.createElement('div')
-    playerTemp.innerHTML = `<label>Player 1</label>
-             <input type='text' name=player1 class='block' id=palyer1 value='Player 1'>`
+    playersN.className = "menuText"
+    let playerTemp = playerSetup(1)
     playersN.appendChild(playerTemp)
     board.append(logo(), main, logo());
     let start = document.createElement('button');
     start.innerHTML = 'Start Game'
     start.id = 'start'
     main.append(cardsA, playersA, playersN, start)
-    // menu event
+    /////////// menu event
     playersAL.addEventListener('click', () => {
         while (playersNames.firstChild) {
             playersNames.removeChild(playersNames.firstChild)
         }
         playerTemp.innerHTML = `<label>Players Names:</label>`
         playersNames.appendChild(playerTemp)
-
-        function playerSetup(i) {
-            let p = document.createElement('div')
-            p.innerHTML = `<label>Player ${i}</label>
-        <input type='text' name='player${i}' class='block' id='palyer${i}' value='Player ${i}'>`
-            return p
-        }
         for (i = 1; i <= playersAL.value; i++) {
             let pl = playerSetup(i)
             playersNames.appendChild(pl)
@@ -176,72 +156,79 @@ function menu() {
     start.addEventListener('click', () => {
         numberOfcard = Number(cardsAL.value);
         numberOfplayer = Number(playersAL.value);
-        let i = 1
-        if (i <= numberOfplayer) {
-            pl1 = document.querySelector("#palyer1").value
-            i++
-            if (i <= numberOfplayer) {
-                pl2 = document.querySelector("#palyer2").value
-                i++
-                if (i <= numberOfplayer) {
-                    pl3 = document.querySelector("#palyer3").value
-                    i++
-                    if (i <= numberOfplayer) {
-                        pl4 = document.querySelector("#palyer4").value
-                        i++
-                    }
-                }
-            }
+        let i = 1;
+        names = [];
+        for (i = 1; i <= numberOfplayer; i++) {
+            names.push(document.querySelector(`#palyer${i}`).value)
         }
+        gameStart()
     })
-    gameStart()
 }
 ///////////////////////////////////////////////////////////
 // event listenrs
-let target;
 board.addEventListener('click', (i) => {
-    target = i.target
-})
-board.addEventListener('click', () => {
-    const playing = document.getElementById("players");
-    if (target == document.getElementById('board') || target == openCards[0] || target.className.includes('flip') ||
-        target == document.getElementById('daley') || target == document.getElementById('Ddaley') ||
-        document.getElementById('main') || target.id == 'start') {} else {
-        target.className = "card flip " + target.innerHTML;
-        openCards.push(target);
+    if (i.target == document.getElementById('board') || i.target == openCards[0] || i.target.className.includes('flip') ||
+        i.target == document.getElementById('daley') || i.target == document.getElementById('Ddaley') ||
+        document.getElementById('main') || i.target.id == 'start') {} 
+        else {
+        i.target.className = "card flip " + i.target.innerHTML;
+        openCards.push(i.target);
         if (openCards.length == 2) {
             if (openCards[0].innerHTML == openCards[1].innerHTML) {
                 sameCards += 2;
                 openCards = [];
                 players[playingP].score += 1;
+                if(players[playingP].score > winner.score && players[playingP].player != winner.player){
+                    winner = players[playingP];
+                }else if(players[playingP].score == winner.score && players[playingP].player != winner.player){
+                    winner.player = 'Tie'
+                }
                 let element = document.getElementById("player-" + playingP);
                 element.innerHTML = players[playingP].player + " score: " + players[playingP].score;
+                if (sameCards == cards.length) {
+                    let end = document.createElement('div');
+                    end.id = 'Ddaley';
+                    board.appendChild(end)
+                    let Eend = document.createElement('div');
+                    Eend.id = 'daley';
+                    if(winner.player == 'Tie'){
+                        Eend.innerText = `Game Over \n Its A Tie!`
+                    }else{
+                    Eend.innerText = `Game Over \n The winner is ${winner.player}`
+                    }
+                    end.appendChild(Eend)
+                }
             } else {
                 if ((players.length - 1) == playingP) {
                     playingP = 0
                     const Ddaley = Fdaley('Ddaley');
                     board.appendChild(Ddaley)
-                    setTimeout(() => {
-                        const delay = Fdaley('daley')
-                        const theDaley = document.getElementById('Ddaley');
-                        theDaley.appendChild(delay)
-                    }, 1100)
+                    if (numberOfplayer == 1) {} else {
+                        setTimeout(() => {
+                            const delay = Fdaley('daley')
+                            const theDaley = document.getElementById('Ddaley');
+                            theDaley.appendChild(delay)
+                        }, 800)
+                    }
                 } else {
                     playingP++
                     const Ddaley = Fdaley('Ddaley');
-                    board.appendChild(Ddaley)
+                    board.appendChild(Ddaley);
                     setTimeout(() => {
                         const delay = Fdaley('daley')
                         const theDaley = document.getElementById('Ddaley');
                         theDaley.appendChild(delay)
-                    }, 1100)
+                    }, 800)
                 }
             }
         }
     }
 })
 board.addEventListener('click', (i) => {
-    if (target == document.getElementById('daley')) {
+    if (i.target == document.getElementById('daley') || i.target == document.getElementById('Ddaley')) {
+        if(sameCards == cards.length){
+            menu();
+        }
         board.removeChild(document.getElementById('Ddaley'));
         for (i of openCards) {
             i.className = i.innerHTML + " card " + "back"
