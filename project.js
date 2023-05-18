@@ -1,15 +1,11 @@
 const board = document.getElementById("board");
 const playing = document.getElementById("players");
 const cardsOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "V"];
-let numberOfcard;
-let numberOfplayer;
-openCards = [];
-cards = [];
-players = [];
-sameCards = 0;
-let playingP = 0;
-names = [];
-let winner = {player: 'tie', score: 0};
+let numberOfcard, numberOfplayer = 1;
+let openCards = [] , cards = [], players = [], names = [];
+let sameCards = 0 , playingP = 0;
+
+winner = {player: 'tie', score: 0};
 menu();
 //////////////////////////////////////////////////
 // functions
@@ -17,7 +13,10 @@ function gameStart() {
     sameCards = 0;
     playingP = 0;
     openCards = [];
-    players = []
+    players = [];
+    let button = {button1: document.querySelector("#menu"), button2: document.querySelector("#reset")};
+    button.button1.disabled = false
+    button.button2.disabled = false 
     for (i = 0; i < names.length; i++) {
         let object = {
             player: names[i],
@@ -50,9 +49,9 @@ function shufel(arr) {
 
 function createCard(idx) {
     const cardEL = document.createElement("div");
-    cardEL.innerHTML = cards[idx];
+    cardEL.innerText = cards[idx];
     cardEL.id = idx
-    cardEL.className = cardEL.innerHTML + " card " + "back"
+    cardEL.className = "card "
     return cardEL
 }
 
@@ -65,10 +64,31 @@ function createPlayer(idx) {
 }
 
 function Fdaley(id) {
-    const delay = document.createElement('div');
-    delay.id = id
-    delay.innerHTML = players[playingP].player + ' now playing'
-    return delay
+    const element = document.createElement('div');
+    element.id = id
+    element.innerHTML = players[playingP].player + ' now playing'
+    return element
+}
+
+function PopupDaley(end) {
+    const popupContainer = Fdaley('Ddaley');
+    const popupContext = Fdaley('daley')
+    board.appendChild(popupContainer);
+    if(end){
+        if(winner.player == 'Tie'){
+        popupContext.innerText = `Game Over \n Its A Tie!`
+        }else{
+        popupContext.innerText = `Game Over \n The winner is ${winner.player}`
+        }
+        setTimeout(() => {
+            popupContainer.appendChild(popupContext)
+            },400)
+    }
+    else{
+    setTimeout(() => {
+        popupContainer.appendChild(popupContext)
+        }, 800)
+    }
 }
 
 function clean() {
@@ -93,70 +113,61 @@ function playerSetup(i) {
     return p
 }
 
+function sectoreCretion(containerName = String, labelText = String, seltorID = String , range = Array){
+    let container = document.createElement('div');
+    container.id = containerName;
+    container.className = "menuText";
+    let label = document.createElement('label');
+    label.innerText = labelText;
+    let selectore = document.createElement('select');
+    selectore.id = seltorID;
+    selectore.className = "block";
+    for(i = range[0]; i <= range[1]; i++){
+        let option = document.createElement('option');
+        option.innerHTML = i
+        option.value = i
+        selectore.appendChild(option)
+    }
+    container.append(label ,selectore)
+    return container
+}
+
 function menu() {
     clean()
     let main = document.createElement('span');
     main.id = 'main';
     main.innerHTML = '<u>main menu</u>'
-    let cardsA = document.createElement('div');
-    cardsA.id = 'cardsTypes'
-    cardsA.className = "menuText"
-    cardsAT = document.createElement('label')
-    cardsAT.innerHTML = "Cards Tyeps: "
-    cardsA.appendChild(cardsAT)
-    let cardsAL = document.createElement('select')
-    cardsAL.id = 'cardsAmount'
-    cardsAL.className = 'block'
-    for (i = 2; i <= cardsOptions.length; i++) {
-        let op = document.createElement('option');
-        op.innerHTML = i
-        op.value = i
-        cardsAL.appendChild(op)
-    }
-    cardsA.appendChild(cardsAL)
-    let playersA = document.createElement('div');
-    playersA.id = 'playersRang'
-    playersA.className = "menuText"
-    playersAT = document.createElement('label')
-    playersAT.innerHTML = "Players Amount: "
-    playersA.appendChild(playersAT)
-    let playersAL = document.createElement('select')
-    playersAL.id = 'playersAmount'
-    playersAL.className = 'block'
-    for (i = 1; i <= 4; i++) {
-        let op = document.createElement('option');
-        op.innerHTML = i
-        op.value = i
-        playersAL.appendChild(op)
-    }
-    playersA.appendChild(playersAL)
-    let playersN = document.createElement('div');
-    playersN.id = 'playersNames'
-    playersN.innerHTML = "Players Names:"
-    playersN.className = "menuText"
+    cardsRange = sectoreCretion('cardsTypes', "Cards Tyeps: ", 'cardsAmount', [2, cardsOptions.length])
+    playersRange = sectoreCretion('playersRange', "Players Amount: ", 'playersAmountSelector' , [1, 4])
+    let playersNames = document.createElement('div');
+    playersNames.id = 'playersNames'
+    playersNames.innerHTML = "Players Names:"
+    playersNames.className = "menuText"
     let playerTemp = playerSetup(1)
-    playersN.appendChild(playerTemp)
-    board.append(logo(), main, logo());
+    playersNames.appendChild(playerTemp)
     let start = document.createElement('button');
     start.innerHTML = 'Start Game'
     start.id = 'start'
-    main.append(cardsA, playersA, playersN, start)
+    main.append(cardsRange, playersRange, playersNames, start)
+    board.append(logo(), main, logo());
     /////////// menu event
-    playersAL.addEventListener('click', () => {
-        while (playersNames.firstChild) {
-            playersNames.removeChild(playersNames.firstChild)
+    playersAmountSelector.addEventListener('click', () => {
+        if( numberOfplayer < playersAmountSelector.value){
+            for (numberOfplayer; numberOfplayer < playersAmountSelector.value; numberOfplayer++) {
+                let pl = playerSetup((numberOfplayer + 1))
+                playersNames.appendChild(pl)
+                }
+            }   
+            else{
+                while(numberOfplayer > playersAmountSelector.value){
+                    playersNames.removeChild(playersNames.lastChild)
+                    numberOfplayer-- 
+                }
+            }
         }
-        playerTemp.innerHTML = `<label>Players Names:</label>`
-        playersNames.appendChild(playerTemp)
-        for (i = 1; i <= playersAL.value; i++) {
-            let pl = playerSetup(i)
-            playersNames.appendChild(pl)
-        }
-    })
+    )
     start.addEventListener('click', () => {
-        numberOfcard = Number(cardsAL.value);
-        numberOfplayer = Number(playersAL.value);
-        let i = 1;
+        numberOfcard = document.getElementById('cardsAmount').value;
         names = [];
         for (i = 1; i <= numberOfplayer; i++) {
             names.push(document.querySelector(`#palyer${i}`).value)
@@ -164,14 +175,21 @@ function menu() {
         gameStart()
     })
 }
+function cardOpen(target){
+    target.className += ' open'
+    setTimeout(()=>{
+        target.className = 'card opened ' + target.innerText
+    }, 500)
+}
+function cradClose(card){
+    card.className = "card "
+}
+
 ///////////////////////////////////////////////////////////
 // event listenrs
 board.addEventListener('click', (i) => {
-    if (i.target == document.getElementById('board') || i.target == openCards[0] || i.target.className.includes('flip') ||
-        i.target == document.getElementById('daley') || i.target == document.getElementById('Ddaley') ||
-        document.getElementById('main') || i.target.id == 'start') {} 
-        else {
-        i.target.className = "card flip " + i.target.innerHTML;
+    if (Array(...document.querySelectorAll('.card')).includes(i.target) && !(i.target.className.includes("card openopened"))){
+        cardOpen(i.target);
         openCards.push(i.target);
         if (openCards.length == 2) {
             if (openCards[0].innerHTML == openCards[1].innerHTML) {
@@ -186,39 +204,15 @@ board.addEventListener('click', (i) => {
                 let element = document.getElementById("player-" + playingP);
                 element.innerHTML = players[playingP].player + " score: " + players[playingP].score;
                 if (sameCards == cards.length) {
-                    let end = document.createElement('div');
-                    end.id = 'Ddaley';
-                    board.appendChild(end)
-                    let Eend = document.createElement('div');
-                    Eend.id = 'daley';
-                    if(winner.player == 'Tie'){
-                        Eend.innerText = `Game Over \n Its A Tie!`
-                    }else{
-                    Eend.innerText = `Game Over \n The winner is ${winner.player}`
-                    }
-                    end.appendChild(Eend)
+                    PopupDaley(true)
                 }
             } else {
                 if ((players.length - 1) == playingP) {
                     playingP = 0
-                    const Ddaley = Fdaley('Ddaley');
-                    board.appendChild(Ddaley)
-                    if (numberOfplayer == 1) {} else {
-                        setTimeout(() => {
-                            const delay = Fdaley('daley')
-                            const theDaley = document.getElementById('Ddaley');
-                            theDaley.appendChild(delay)
-                        }, 800)
-                    }
+                    PopupDaley(false)
                 } else {
                     playingP++
-                    const Ddaley = Fdaley('Ddaley');
-                    board.appendChild(Ddaley);
-                    setTimeout(() => {
-                        const delay = Fdaley('daley')
-                        const theDaley = document.getElementById('Ddaley');
-                        theDaley.appendChild(delay)
-                    }, 800)
+                    PopupDaley(false)
                 }
             }
         }
@@ -229,10 +223,12 @@ board.addEventListener('click', (i) => {
         if(sameCards == cards.length){
             menu();
         }
+        else{
         board.removeChild(document.getElementById('Ddaley'));
         for (i of openCards) {
-            i.className = i.innerHTML + " card " + "back"
-        }
+            i.className = "card"
+            }
         openCards = []
+        }
     }
 })

@@ -22,7 +22,6 @@ h1{
     text-shadow: 0 8px 15px #adadad;
 }
 body{
-    height: 100vh;
     background: #8acfe7b3;
     perspective: 100vh;
 }
@@ -96,28 +95,25 @@ body{
 }
 #Ddaley{
     position: fixed;
-    top: 5.2rem;
-    width: 100%;
-    height: 88vw;
-    float: left;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
     color: transparent;
     cursor: pointer;
 }
 #daley{
-    position: absolute;
-    background-color: rgba(229, 223, 44, 0.719);
-    top: 0px;
-    margin-left: 9.3rem;
-    margin-right: 9rem;
-    padding-top: 9rem;
+    position: sticky;
+    background-color: rgba(229, 223, 44, 0.718);
+    top: 4vh;
+    padding: 25% 0%;
+    margin-left: 10vw;
     font-size: 10vh;
     font-weight: bolder;
     font-style: italic;
     text-align: center;
-    align-content: center;
     color: rgb(49, 49, 49);
-    width: 155vh;
-    height: 80vh;
+    width: 80vw;
+    height: 90vh;
     cursor: pointer;
 }
 /* menu desain */
@@ -176,199 +172,149 @@ body{
     transition: .2s;
 }
 /* cards desian  */
-.card:active{
-        transform: scale(.97);
-        transition: .2s;
-    }   
 .card:hover{
         box-shadow: 0 0 5rem 2rem #958f8f;
         cursor: pointer;
     }
 .card{
-        height: 22vmin;
-        width: 16vmin;
-        border:2px solid black;
-        border-radius: 0.5rem;
-        color: transparent;
+    height: 22vmin;
+    width: 16vmin;
+    border:2px solid black;
+    border-radius: 0.5rem;
+    color: transparent;
     cursor: pointer;
-    transform: scale(1);
     user-select: none;
     box-shadow: -1vw -1vw 3rem 0rem #0000008d;
-    backface-visibility: hidden;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform .8s;
-    }
-.card.flip{
-        transform: rotateY(360deg);
-    }
-.A{
-    background-image: url("cards/azumag-kougzx.png");
-    background-color: rgb(113, 77, 11);
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: repeat-y;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.B{
-    background-image: url("cards/black-cat.png");
-    background-color: red;
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: repeat-x;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.C{
-    background-image: url("cards/cat-listening-to-music.png");
-    background-color: rgb(65, 180, 118);
-    background-size: contain;
-    background-position: center;
-    background-repeat: repeat-x;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.D{
-    background-image: url("cards/cat-with-big-smile.png");
-    background-size: 100% 100%;
-    background-color: rgb(87, 54, 85);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.E{
-    background-image: url("cards/60-605442_evil-cat-png-clip-art-free-halloween-silhouette.png");
-    background-size: 100% 100%;
-    background-color: rgb(73, 73, 73);
-    background-repeat: repeat-y;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.F{
-    background-image: url("cards/christmas_cat_and_costume_1399.png");
-    background-size: 100% 100%;
-    background-color: rgb(220, 214, 214);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.G{
-    background-image: url("cards/body-cat.webp");
-    background-size: 100% 100%;
-    background-color: rgb(255, 145, 0);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.H{
-    background-image: url("cards/fussy.png");
-    background-size: 100% 100%;
-    background-color: rgb(24, 61, 248);
-    background-position: center;
-    background-repeat: repeat-x;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.I{
-    background-image: url("cards/unicat.png");
-    background-size: 100% 100%;
-    background-color: rgb(255, 157, 199);
-    background-position: center;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.J{
-    background-image: url("cards/super-hero.png");
-    background-size: 100% 100%;
-    background-color: rgb(56, 255, 232);
-    background-position: bottom;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.K{
-    background-image: url("cards/cute-gray-cat.png");
-    background-size: 100% 100%;
-    background-color: rgb(255, 229, 61);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.L{
-    background-image: url("cards/black-and-white.png");
-    background-size: 130% 100%;
-    background-color: rgb(248, 74, 74);
-    background-position-x: -1rem;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.M{
-    background-image: url("cards/grampy-cat.png");
-    background-size: 100% 100%;
-    background-color: rgb(11, 11, 37);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.N{
-    background-image: url("cards/sphynx.png");
-    background-size: 135% 110%;
-    background-color: rgb(217, 255, 0);
-    background-position-x: -1.1rem;
-    background-position-y: -.5rem;
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.O{
-    background-image: url("cards/cat-and-bone.png");
-    background-size: 100% 100%;
-    background-color: rgb(154, 20, 20);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.P{
-    background-image: url("cards/dizzy-cat.png");
-    background-size: 100% 95%;
-    background-color: rgb(125, 26, 58);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.Q{
-    background-image: url("cards/pirate.png");
-    background-size: 100% 100%;
-    background-color: rgb(83, 149, 214);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.R{
-    background-image: url("cards/takocat.png");
-    background-size: 100% 95%;
-    background-color: rgb(233, 83, 178);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.S{
-    background-image: url("cards/basket.png");
-    background-size: 100% 100%;
-    background-color: rgb(185, 0, 142);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.V{
-    background-image: url("cards/soldiar.png");
-    background-size: 100% 100%;
-    background-color: rgb(35, 12, 12);
-    backface-visibility: visible;
-    transform: rotateY(180deg);
-}
-.back{
     background-image: url("cards/back.png");
+    transition: transform .8s;
     justify-content: center;
     background-position: center;
     background-size: 139% 104%;
     background-color: black;
 }
-/* spin logo */
+.card.open{
+    transform: rotateY(90deg);
+    transition: 0.4s;
+}
 
+.card.opened{
+    transform: rotateY(180deg);
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.A{
+    background-image: url("cards/azumag-kougzx.png");
+    background-color: rgb(113, 77, 11);
+    background-repeat: repeat-y;
+}
+.B{
+    background-image: url("cards/black-cat.png");
+    background-color: red;
+    background-repeat: repeat-x;
+}
+.C{
+    background-image: url("cards/cat-listening-to-music.png");
+    background-color: rgb(65, 180, 118);
+    background-size: 100% 40% !important;
+    background-repeat: repeat-x;
+}
+.D{
+    background-image: url("cards/cat-with-big-smile.png");
+    background-color: rgb(87, 54, 85);
+}
+.E{
+    background-image: url("cards/60-605442_evil-cat-png-clip-art-free-halloween-silhouette.png");
+    background-color: rgb(73, 73, 73);
+    background-repeat: repeat-y;
+}
+.F{
+    background-image: url("cards/christmas_cat_and_costume_1399.png");
+    background-color: rgb(220, 214, 214);
+}
+.G{
+    background-image: url("cards/body-cat.webp");
+    background-color: rgb(255, 145, 0);
+}
+.H{
+    background-image: url("cards/fussy.png");
+    background-color: rgb(24, 61, 248);
+    background-repeat: repeat-x;
+}
+.I{
+    background-image: url("cards/unicat.png");
+    background-color: rgb(255, 157, 199);
+}
+.J{
+    background-image: url("cards/super-hero.png");
+    background-color: rgb(56, 255, 232);
+    background-position: bottom;
+}
+.K{
+    background-image: url("cards/cute-gray-cat.png");
+    background-color: rgb(255, 229, 61);
+}
+.L{
+    background-image: url("cards/black-and-white.png");
+    background-size: 130% 100% !important;
+    background-color: rgb(248, 74, 74);
+    background-position-x: -1rem;
+}
+.M{
+    background-image: url("cards/grampy-cat.png");
+    background-color: rgb(11, 11, 37);
+}
+.N{
+    background-image: url("cards/sphynx.png");
+    background-size: 135% 110% !important;
+    background-color: rgb(217, 255, 0);
+    background-position-x: -1.1rem;
+    background-position-y: -.5rem;
+}
+.O{
+    background-image: url("cards/cat-and-bone.png");
+    background-color: rgb(154, 20, 20);
+}
+.P{
+    background-image: url("cards/dizzy-cat.png");
+    background-size: 100% 95% !important;
+    background-color: rgb(125, 26, 58);
+}
+.Q{
+    background-image: url("cards/pirate.png");
+    background-color: rgb(83, 149, 214);
+}
+.R{
+    background-image: url("cards/takocat.png");
+    background-size: 100% 95% !important;
+    background-color: rgb(233, 83, 178);
+}
+.S{
+    background-image: url("cards/basket.png");
+    background-color: rgb(185, 0, 142);
+}
+.V{
+    background-image: url("cards/soldiar.png");
+    background-color: rgb(35, 12, 12);
+}
+.back{
+    background-image: url("cards/back.png");
+    justify-content: center;
+    background-size: 139% 104% !important;
+    background-color: black;
+}
+
+/* spin logo */
 @media (prefers-reduced-motion: no-preference) {
     .logo {
       animation: logo-spin infinite 15s linear;
     }
+    .card.flip {
+        animation: card-flip 2s linear;
+    }
+
   }
 .logo{
     width: 28vmin;
@@ -390,4 +336,3 @@ body{
       transform: rotate(360deg);
     }
   }
-  
