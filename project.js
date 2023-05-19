@@ -179,7 +179,7 @@ function cardOpen(target){
     target.className += ' open'
     setTimeout(()=>{
         target.className = 'card opened ' + target.innerText
-    }, 500)
+    }, 200)
 }
 function cradClose(card){
     card.className = "card "

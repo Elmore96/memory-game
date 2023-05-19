@@ -1,6 +1,8 @@
 *, *::after, *::before{
     box-sizing: border-box;
 }
+/* ////////////////////////////////////////// */
+/* body styling */
 #top{
     display: flex;
     flex-wrap: wrap;
@@ -93,6 +95,8 @@ body{
     border-radius: 20px;
     box-shadow: -2vw 2vw 5rem 1rem #626161;
 }
+/* /////////////// */
+/* popup styling */
 #Ddaley{
     position: fixed;
     top: 0;
@@ -196,7 +200,7 @@ body{
 }
 .card.open{
     transform: rotateY(90deg);
-    transition: 0.4s;
+    transition: 0.3s;
 }
 
 .card.opened{
