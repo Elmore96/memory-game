@@ -134,6 +134,7 @@ function sectoreCretion(containerName = String, labelText = String, seltorID = S
 
 function menu() {
     clean()
+    numberOfplayer = 1
     let main = document.createElement('span');
     main.id = 'main';
     main.innerHTML = '<u>main menu</u>'
